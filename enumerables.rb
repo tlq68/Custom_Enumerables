@@ -1,10 +1,3 @@
-# Create custom versions of the following methods.
-# Test these methods using the following:
-
-# puts "my_each vs. each"
-# numbers = [1, 2, 3, 4, 5]
-# numbers.my_each { |item| puts item }
-# numbers.each { |item| puts item }
 module Enumerable
     # my_each
     def my_each(&block)
