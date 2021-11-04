@@ -10,7 +10,6 @@ module Enumerable
         end
     end
 
-
     # my_each_with_index
     def my_each_with_index(&block)
         if block_given?
@@ -127,7 +126,6 @@ module Enumerable
     end
 end
 
-
 numbers = [1, 2, 3, 4]
 names = ["Tex", "Timmy", "John", "Fred"]
 names_with_multiples = ["Jason", "Tex", "Timmy", "John", "Fred", "Jason", "Tex", "Tex"]
@@ -136,7 +134,6 @@ all_test_true = [1, 1, 1, 1, 1, 1]
 all_test_false = [1, 1, 1, 1, 4, 1]
 inject_hash_1 = [1, 2, 5, 7, 4, 12, 9, 11, 3, 9, 20, 2, 14]
 inject_hash_2 = [[3, 6], [10, 4], [8, 1], [2, 7]]
-
 
 puts "\nmy_each vs. each"
 numbers.my_each {|x| p x}
@@ -206,14 +203,12 @@ puts "---"
 p numbers.map {|x| x * 7}
 p my_hash.map {|k,v| v.upcase}
 
-
 puts "\nmy_inject vs. inject"
 hash_test_1 = inject_hash_1.inject(0) do |item, value|
     item + value
 end
 p hash_test_1
 puts "---"
-
 hash_test_1 = inject_hash_1.my_inject(0) do |item, value|
     item + value
 end
@@ -225,7 +220,6 @@ hash_test_2 = inject_hash_2.inject([0,0]) do |acc, stock|
 end
 p hash_test_2
 puts "---"
-
 hash_test_2 = inject_hash_2.my_inject([0,0]) do |acc, stock| 
     (acc.last - acc.first) > (stock.last - stock.first) ? [acc.first, acc.last] : stock
 end
@@ -246,7 +240,6 @@ hash_test_3 = names_with_multiples.my_inject({}) do |acc, name|
     acc
 end
 p hash_test_3
-
 
 puts "\nmy_map proc test"
 a_proc = Proc.new {|x| puts x.upcase}
